@@ -8,6 +8,7 @@ import { DonorFormComponent } from './donor-form/donor-form.component';
 import { DateCountPipe } from './date-count.pipe';
 import { DonorComponent } from './donor/donor.component';
 import { DonorDetailsComponent } from './donor-details/donor-details.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DonorDetailsComponent } from './donor-details/donor-details.component';
     DonorFormComponent,
     DateCountPipe,
     DonorComponent,
-    DonorDetailsComponent
+    DonorDetailsComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,
