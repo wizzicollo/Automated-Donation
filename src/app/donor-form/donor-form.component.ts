@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Donor } from "../donor";
 
 @Component({
   selector: 'app-donor-form',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./donor-form.component.css']
 })
 export class DonorFormComponent implements OnInit {
+newDonor = new Donor( 0,"","","",0,0,0,"",new Date());
+@Output() addDonor = new EventEmitter<Donor>();
+submitQuote(){
+  this.addDonor.emit(this.newDonor);
+}
 
   constructor() { }
 

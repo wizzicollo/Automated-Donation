@@ -1,1 +1,87 @@
-<p>donor-form works!</p>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Dancing+Script&family=Open+Sans+Condensed&family=Oswald:wght@300&display=swap" rel="stylesheet">
+<body>
+
+  <div class="container-fluid" style="padding: 200px;">
+    <h2 class="text-center">Donor Details</h2>
+
+    <form (ngSubmit)="submitQuote()" #quoteForm="ngForm" name="">
+      <div class="form-group">
+
+        <label for="location">Location</label>
+        <textarea class="form-control" id="location" [(ngModel)]="newDonor.location" name="location" #location="ngModel"
+          required></textarea>
+
+        <div [hidden]="location.invalid|| location.pristine" class="alert alert-danger">Location is required</div>
+
+      </div>
+      <div class="form-group">
+
+        <label for="description">Dessciption</label>
+        <textarea class="form-control" id="description" [(ngModel)]="newDonor.description" name="description" #description="ngModel"
+          required></textarea>
+
+        <!-- <div [hidden]="description.invalid|| description.pristine" class="alert alert-danger">Dessciption is required</div> -->
+
+      </div>
+      <div class="form-group">
+
+        <label for="organization">Organization</label>
+        <textarea class="form-control" id="organization" [(ngModel)]="newDonor.organization" name="organization" #organization="ngModel"
+          required></textarea>
+
+        <!-- <div [hidden]="organization.invalid|| organization.pristine" class="alert alert-danger">Organization is required</div> -->
+
+      </div>
+      <div class="form-group">
+
+        <label for="author">Phone Number</label>
+        <textarea class="form-control" id="phone_number" [(ngModel)]="newDonor.phone_number" name="phone_number" #phone_number="ngModel"
+          required></textarea>
+
+        <div [hidden]="phone_number.invalid || phone_number.pristine" class="alert alert-danger">
+          <p>Phone Number is required</p>
+        </div>
+
+      </div>
+      <div class="form-group">
+
+        <label for="description">Card Number</label>
+        <textarea class="form-control" id="card_number" [(ngModel)]="newDonor.card_number" name="card_number"
+          #card_number="ngModel" required></textarea>
+        <div [hidden]="card_number.invalid || card_number.pristine" class="alert alert-danger">
+          <p>Card Number is required</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+
+        <label for="description">Amount($)</label>
+        <textarea class="form-control" id="amount" [(ngModel)]="newDonor.amount" name="amount"
+          #amount="ngModel" required></textarea>
+        <div [hidden]="amount.invalid || amount.pristine" class="alert alert-danger">
+          <p>Amount is required</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+
+        <label for="description">Charity</label>
+        <textarea class="form-control" id="receiver" [(ngModel)]="newDonor.receiver" name="receiver"
+          #receiver="ngModel" required></textarea>
+        <div [hidden]="receiver.invalid || receiver.pristine" class="alert alert-danger">
+          <p>Charity is required</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="calender">Calender</label>
+        <input type='date' id="complete" required>
+
+      </div>
+      <button type="submit" class="btn-sm btn-primary">Donate</button>
+
+    </form>
+
+  </div>
+
+</body>

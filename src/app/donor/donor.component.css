@@ -1,0 +1,41 @@
+body {
+    background-color: #15f7ca;
+    background-image: url(https://thumbs.dreamstime.com/z/target-achievement-mountain-adventure-taurus-mountains-altitude-meter-61542260.jpg);
+    background-size: 1000px 1000px;
+    height: 120vh;
+    margin-bottom: 0;  
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: 'Srisakdi', cursive;
+    font-family: 'Bowlby One SC', cursive;
+    font-family: 'Akronim', cursive;
+    font-family: 'Sancreek', cursive;
+  }
+  
+  h1:hover {
+    color: #15f7ca;
+  }
+  
+  h3 {
+    font-size: 28px;
+    font-family: 'Srisakdi', cursive;
+  }
+  
+  .landing {
+    height: 200px;
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/07/21/46/quotes-2608205__340.jpg");
+    background-size: 1600px 500px;
+  }
