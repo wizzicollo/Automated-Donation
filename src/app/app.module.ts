@@ -15,6 +15,11 @@ import { HomeComponent } from './home/home.component';
 import { HomeFormComponent } from './home-form/home-form.component';
 import { FormsModule } from '@angular/forms';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { HomeDetailComponent } from './home-detail/home-detail.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
 
 
  
@@ -27,7 +32,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     NavbarComponent,
     HomeComponent,
     HomeFormComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    HomeDetailComponent
    
   
    
@@ -44,7 +50,9 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
     
    
   ],

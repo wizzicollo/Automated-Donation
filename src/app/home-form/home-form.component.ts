@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Home } from '../home'
 
 @Component({
   selector: 'app-home-form',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeFormComponent implements OnInit {
 
   constructor() { }
-
+  model = new Home("","","",new Date());
   ngOnInit(): void {
+    
   }
 
 }
