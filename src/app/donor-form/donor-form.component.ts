@@ -9,7 +9,7 @@ import { Donor } from "../donor";
 export class DonorFormComponent implements OnInit {
 newDonor = new Donor( 0,"","","",0,0,0,"",new Date());
 @Output() addDonor = new EventEmitter<Donor>();
-submitQuote(){
+submitDonor(){
   this.addDonor.emit(this.newDonor);
 }
 
