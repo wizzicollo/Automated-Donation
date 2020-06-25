@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.page    { display: none; padding: 0 0.5em; }
+#loading {
+  display: block;
+  position: absolute;
+
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  background-image: url("https://bit.ly/2Cj97sx");
+  background-repeat: no-repeat;
+  background-position: center;
+}
