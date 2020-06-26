@@ -9,9 +9,8 @@ import { Home } from '../home'
 export class HomeFormComponent implements OnInit {
 
   constructor() { }
-  model = new Home("","","",new Date());
+  newHome = new Home("","","",new Date());
   ngOnInit(): void {
-    
   }
 
 }

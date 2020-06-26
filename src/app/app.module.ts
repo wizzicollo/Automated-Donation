@@ -14,8 +14,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { HomeFormComponent } from './home-form/home-form.component';
 import { FormsModule } from '@angular/forms';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
-import { HomeDetailComponent } from './home-detail/home-detail.component';
+
+
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -32,8 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     HomeComponent,
     HomeFormComponent,
-    TestimonialsComponent,
-    HomeDetailComponent
+    
    
   
    
