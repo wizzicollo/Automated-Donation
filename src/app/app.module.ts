@@ -3,16 +3,51 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
+import { UsermanagerService } from './usermanager.service';
+
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './dashboard/dashboard.component';
+ 
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:4200'],
+        blacklistedRoutes: ['example.com/examplebadroute/']
+      }
+    }),
+    CommonModule,
+    BrowserAnimationsModule, // required animations module 
   ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    AuthService,
+    UsermanagerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
