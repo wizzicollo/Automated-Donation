@@ -1,5 +1,5 @@
 .testimonial-header {
-    background-image: url("https://cdn.pixabay.com/photo/2020/06/19/09/16/fantasy-5316369__340.jpg");
+    background-image: url("https://cdn.pixabay.com/photo/2018/02/04/09/03/migration-3129340__340.jpg");
     background-size: 1600px 650px;
     position: absolute; /* Sit on top of the page content */
     width: 100%; /* Full width (cover the whole page) */
@@ -17,7 +17,7 @@
     font-size: 15px;
   }
 
-  h4,h5 {
+  h4,h5,p {
     font-family: 'Oswald', sans-serif;
   }
 
@@ -26,9 +26,11 @@
   top: 50%;
   left: 50%;
   font-size: 50px;
-  color: white;
+  color: brown;
+  border: 2px black;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+  font-family: 'Oswald', sans-serif;
 }
 
 img {

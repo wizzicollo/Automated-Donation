@@ -5,7 +5,7 @@
     <h2 class="text-center">Donor Details</h2>
 
     <form (ngSubmit)="submitDonor()" #donorForm="ngForm" name="">
-      <div class="form-group">
+      <!-- <div class="form-group">
 
         <label for="location">Location</label>
         <textarea class="form-control" id="location" [(ngModel)]="newDonor.location" name="location" #location="ngModel"
@@ -13,16 +13,16 @@
 
         <div [hidden]="location.invalid|| location.pristine" class="alert alert-danger">Location is required</div>
 
-      </div>
-      <div class="form-group">
+      </div> -->
+      <!-- <div class="form-group">
 
         <label for="description">Dessciption</label>
         <textarea class="form-control" id="description" [(ngModel)]="newDonor.description" name="description" #description="ngModel"
           required></textarea>
 
-        <!-- <div [hidden]="description.invalid|| description.pristine" class="alert alert-danger">Dessciption is required</div> -->
+        <div [hidden]="description.invalid|| description.pristine" class="alert alert-danger">Dessciption is required</div> -->
 
-      </div>
+      
       <div class="form-group">
 
         <label for="organization">Organization</label>
@@ -32,7 +32,7 @@
         <!-- <div [hidden]="organization.invalid|| organization.pristine" class="alert alert-danger">Organization is required</div> -->
 
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
 
         <label for="author">Phone Number</label>
         <textarea class="form-control" id="phone_number" [(ngModel)]="newDonor.phone_number" name="phone_number" #phone_number="ngModel"
@@ -42,8 +42,8 @@
           <p>Phone Number is required</p>
         </div>
 
-      </div>
-      <div class="form-group">
+      </div> -->
+      <!-- <div class="form-group">
 
         <label for="description">Card Number</label>
         <textarea class="form-control" id="card_number" [(ngModel)]="newDonor.card_number" name="card_number"
@@ -51,7 +51,7 @@
         <div [hidden]="card_number.invalid || card_number.pristine" class="alert alert-danger">
           <p>Card Number is required</p>
         </div>
-      </div>
+      </div> -->
 
       <div class="form-group">
 
