@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Automated-Donations": {
+    "web": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Automated-Donations",
+            "outputPath": "dist/web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Automated-Donations:build"
+            "browserTarget": "web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Automated-Donations:build:production"
+              "browserTarget": "web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Automated-Donations:build"
+            "browserTarget": "web:build"
           }
         },
         "test": {
@@ -110,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Automated-Donations:serve"
+            "devServerTarget": "web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Automated-Donations:serve:production"
+              "devServerTarget": "web:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Automated-Donations",
+  "defaultProject": "web",
   "cli": {
-    "analytics": "15588a3d-1c03-4d64-8bdb-0fb2af9a965a"
+    "analytics": "46f17427-ba27-4bc3-a502-0cd973e40bfd"
   }
 }
