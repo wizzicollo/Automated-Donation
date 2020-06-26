@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProfileComponent } from './components/profile/profile.component';
+// import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
-    {path:'profile',component:ProfileComponent},
+    // {path:'profile',component:ProfileComponent},
 
   ];
 
@@ -15,7 +15,7 @@ const routes: Routes = [
   export class AppRoutingModule { }
   export const routingComponents=[
   
-  ProfileComponent,
+  // ProfileComponent,
  
   ]
 

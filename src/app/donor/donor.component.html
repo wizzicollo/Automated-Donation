@@ -1,0 +1,32 @@
+<link href="https://fonts.googleapis.com/css?family=Srisakdi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Srisakdi&display=swap" rel="stylesheet">
+
+<body>
+  <div class="container-fluid">
+
+    <div class="landing">
+      <h1 style="padding-top: 100px;">Donor</h1>
+    </div>
+
+    <div class="row">
+
+      <!-- <div class="col md-6">
+
+        <div *ngFor='let donor of donors ;let i = index'>
+          <div class="card">
+            <h3 appHighlight> {{donor.donor}} </h3>
+          </div>
+          <app-donor-detail *ngIf='donor.detail' [donor]='donor' (isComplete)='deleteDonor($event,i)'>
+        </app-donor-detail>
+          <button (click)='toggleDetails(i)' class="bg-primary btn text-white">View More</button>
+        </div>
+      </div> -->
+      <div class="col-md 12">
+        <div class="card">
+          <app-donor-form (addDonor)="addNewDonor($event)"></app-donor-form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
