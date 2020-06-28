@@ -1,5 +1,5 @@
 .home{
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1.5)), url("https://bit.ly/3emzpYZ");
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1.5)), url('https://bit.ly/2UjBu0w');
     height: 70%;
     background-size: cover;
     background-position: center;
@@ -75,8 +75,19 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
     padding: 16px;
     text-align: center;
-    background-color: #f1f1f1;
+    background-color:#3f51b5;
   }
+
+  /* .container {
+    background-image: url("https://bit.ly/3enw6kT");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: wheat;
+  } */
+
+  #more {display: none;} 
+  
 
   @media screen and (max-width: 600px) {
     .column {

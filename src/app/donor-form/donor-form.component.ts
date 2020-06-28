@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Donor } from "../donor";
 
 @Component({
