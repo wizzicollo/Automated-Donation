@@ -14,6 +14,7 @@ import { UsermanagerService } from './usermanager.service';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
  
 
 export function tokenGetter() {
@@ -26,6 +27,7 @@ export function tokenGetter() {
     AppComponent,
     LoginComponent,
     DashboardComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
