@@ -1,0 +1,66 @@
+<div class="container">
+    <h1 style="text-align: center;padding-top: 30px;">List of Funds</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+
+            <ul>
+                <ul *ngFor="let charity of charities">
+                    <h2 style="color: blue;" (click)="charityClicked(charity)">{{ charity.location }}</h2>
+                    <p>
+                        {{charity.target_amount}}
+                    </p>
+                    <p style="color: #8888;">
+                        {{charity.amount_raised}}
+                    </p>
+                    <p>
+                        {{charity.user}}
+                    </p>
+                </ul>
+            </ul>
+            <hr>
+        </div>
+        <hr>
+        <div class="col-md-6" style="padding-left: 150px;">
+            <h2 style="text-align: left;">Fill this form kindly to donate</h2>
+
+            <div class="form-group" style="width: 100%;">
+
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location" [(ngModel)]="selectedCharity.location"
+                location="location" #title='ngModel' required>
+
+            </div>
+            <hr>
+            <div class="form-group" style="width: 100%;">
+
+                <label for="target_amount">Target Amount</label>
+                <input type="number" class="form-control" id="target_amount" [(ngModel)]="selectedCharity.target_amount" target_amount="target_amount"
+                    #target_amount='ngModel' required>
+            </div>
+
+            <hr>
+            <div class="form-group" style="width: 100%;">
+                <div class="form-group" style="width: 100%;">
+
+                    <label for="amount_raised">Target Amount</label>
+                    <input type="number" class="form-control" id="amount_raised" [(ngModel)]="selectedCharity.amount_raised" amount_raised="amount_raised"
+                        #amount_raised='ngModel' required>
+                </div>
+                <hr>
+                <div class="form-group" style="width: 100%;">
+
+                    <label for="user">User_id</label>
+                    <input type="number" class="form-control" id="user" [(ngModel)]="selectedCharity.user"
+                    user="user" #user='ngModel' required>
+                
+                </div>
+
+               
+    <button *ngIf="selectedCharity.id != -1" (click)="updateCharity()"> PUT </button>
+    <button  *ngIf="selectedCharity.id != -1" (click)="createCharity()"> POST </button>
+    <button *ngIf="selectedCharity.id != -1" (click)="deleteCharity()"> DELETE </button>
+            </div>
+        </div>
+    </div>
+    <hr>

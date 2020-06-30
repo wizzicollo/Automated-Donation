@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Home } from '../home'
+
 
 
 @Component({
@@ -8,7 +8,7 @@ import { Home } from '../home'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  newHome = new Home("","","",new Date());
+ 
   constructor() { }
 
   ngOnInit(): void {

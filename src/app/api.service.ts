@@ -6,6 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  createCharity(selectedCharity: any) {
+    throw new Error("Method not implemented.");
+  }
+  deleteCharity(id: any) {
+    throw new Error("Method not implemented.");
+  }
 
 
   baseurl = "http://127.0.0.1:8000/"
@@ -13,6 +19,9 @@ export class ApiService {
   token = JSON.parse(localStorage.getItem('accessToken'))
 
   headers = new HttpHeaders().set("Authorization",'Bearer' + this.token);
+  getAllCharities: any;
+  getOneCharity: any;
+  updateCharity: any;
 
   constructor(private http: HttpClient) { }
 
