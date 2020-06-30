@@ -15,6 +15,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfilesService } from './core/services'
  
 
 export function tokenGetter() {
@@ -28,6 +30,7 @@ export function tokenGetter() {
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ export function tokenGetter() {
   providers: [
     AuthGuardService,
     AuthService,
-    UsermanagerService
+    UsermanagerService,
+    ProfilesService,
   ],
   bootstrap: [AppComponent]
 })
