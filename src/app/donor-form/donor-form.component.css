@@ -1,0 +1,7 @@
+label, input {
+    font-family: 'Oswald', sans-serif;
+}
+
+#card_number {
+    width: 350px;
+}

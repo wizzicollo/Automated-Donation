@@ -9,12 +9,8 @@ import { Donor } from '../donor';
 export class DonorComponent implements OnInit {
 
   donors: Donor[] = [
-    new Donor(1, 'Nairobi,Kenya', 'I like helping out','0743502214',8746,5000,9845,'Gumbaru Charity', new Date(2020,4,21)),
-    new Donor(1, 'Kisumu,Kenya', 'I passed through alot and I dont want somebody else to pass through what I passed through and I am in a position to help','0743502214',8746,5000,9845,'Gumbaru Charity', new Date(2020,4,21)),
-    new Donor(1, 'Khartoum,Sudan', 'Wiping out tears when I am in a position to do so','0743502214',8746,5000,9845,'Gumbaru Charity', new Date(2020,4,21)),
-    new Donor(1, 'Tokyo,Japan', 'Always ready to help where needed','0743502214',8746,5000,9845,'Gumbaru Charity', new Date(2020,4,21)),
-    new Donor(1, 'Beijing,China', 'Helping is my hobby','0743502214',8746,5000,9845,'Gumbaru Charity', new Date(2020,4,21)),
-    new Donor(1, 'Nairobi,Kenya', 'Smilling faces is what I want to see','0743502214',8746,5000,9845,'Gumbaru Charity', new Date(2020,4,21)),
+    new Donor(50000, 'Kenya Muslim Charitable Society', 'weekly',98498374674653,new Date(2021,4,7),"4867")
+    
   ];
 
   toggleDetails(index) {

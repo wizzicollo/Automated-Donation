@@ -11,6 +11,7 @@ import { DonorComponent } from './donor/donor.component';
 import { DonorDetailsComponent } from './donor-details/donor-details.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
+import { DonateService } from './donate.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ImageUploadComponent } from './image-upload/image-upload.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DonateService],
   bootstrap: [AppComponent]
 
 })
