@@ -1,0 +1,43 @@
+/* .container {
+    background-image: url("https://bit.ly/3enw6kT");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: wheat;
+  }
+
+  #more {display: none;}  */
+
+  h2 {
+    text-align: center;
+    color: black;
+;
+}
+
+
+   h1 {
+    text-align: center;
+    color: #2780E3;
+
+  }
+
+  p {
+
+    text-align: center;
+    color: black;
+  }
+.wat_we_do {
+  /* border-color: #FF7518;
+  border-style: ridge;
+  border-radius: 1%; */
+  padding: 5%;
+  color: #2780E3;
+}
+
+.about {
+ /* border-color: #DF691A;
+  border-style: ridge;
+  border-radius: 1%; */
+  padding: 5%;
+
+}

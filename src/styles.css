@@ -1,7 +1,9 @@
 
+/* font-family: 'Maven Pro', sans-serif;
+font-family: 'Nixie One', cursive; */
 
 /* You can add global styles to this file, and also import other style files */
-.page    { display: none; padding: 0 0.5em; }
+/* .page    { display: none; padding: 0 0.5em; }
 #loading {
   display: block;
   position: absolute;
@@ -15,5 +17,20 @@
   background-position: center;
 }
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+
+font-family: 'Maven Pro', sans-serif;
+font-family: 'Nixie One', cursive;
+
+html, body {
+  font-family: "Maven Pro";
+  font-size: 18px;
+}
+/* "styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css"
+] */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

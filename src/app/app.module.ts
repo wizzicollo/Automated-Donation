@@ -1,37 +1,49 @@
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { HomeFormComponent } from './home-form/home-form.component';
-import { DonorComponent } from './donor/donor.component';
-import { DonorDetailsComponent } from './donor-details/donor-details.component';
-import { DonorFormComponent } from './donor-form/donor-form.component';
-import { ImageUploadComponent } from './image-upload/image-upload.component';
-import { CharityRegistrationFormComponent } from './charity-registration-form/charity-registration-form.component';
-import { FooterComponent } from './footer/footer.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
-import { ProfileComponent } from './profile/profile.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { HomeFormComponent } from './components/home-form/home-form.component';
+import { DonorComponent } from './components/donor/donor.component';
+import { DonorDetailsComponent } from './components/donor-details/donor-details.component';
+import { DonorFormComponent } from './components/donor-form/donor-form.component';
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
+import { CharityRegistrationFormComponent } from './components/charity-registration-form/charity-registration-form.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './components/contact/contact.component';
+import { CharitiesComponent } from './components/charities/charities.component';
+import { CharityComponent } from './components/charity/charity.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { CommonModule } from '@angular/common';
+
+import { UsermanagerService } from './services/usermanager.service';
 
 
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    
     NavbarComponent,
     HomeComponent,
     HomeFormComponent,
@@ -42,13 +54,16 @@ import { HttpClientModule } from '@angular/common/http';
     CharityRegistrationFormComponent,
     FooterComponent,
     DashboardComponent,
-    // LoginComponent,
+    LoginComponent,
     TestimonialsComponent,
-    // RegisterComponent,
-    // AboutusComponent,
-    // ProfileComponent,
-  
-   
+    ContactComponent,
+    CharityComponent,
+    RegisterComponent,
+    CharityComponent,
+    AboutusComponent,
+    ProfileComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -60,10 +75,24 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
-    
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:4200'],
+        blacklistedRoutes: ['example.com/examplebadroute/']
+      }
+    }),
+    CommonModule,
+     BrowserAnimationsModule,
+
+
   ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    AuthService,
+    UsermanagerService,
+    // ProfilesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
