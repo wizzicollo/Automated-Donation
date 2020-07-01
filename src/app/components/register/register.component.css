@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files
 @import "~bootstrap/dist/css/bootstrap.css" */
 .register{
-    background: -webkit-linear-gradient(left, #2780E3, #312f2f);
+    background: -webkit-linear-gradient(left, #2780E3,  rgb(132, 186, 247));
     margin-top: 3%;
     padding: 3%;
 }

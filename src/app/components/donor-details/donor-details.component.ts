@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Donor } from 'src/app/classes/donor';
 
 @Component({
   selector: 'app-donor-details',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonorDetailsComponent implements OnInit {
 
+  @Input() donor: Donor;
+  @Output() isComplete = new EventEmitter<boolean>();
+  donorDelete(complete: boolean) {
+    this.isComplete.emit(complete);
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
