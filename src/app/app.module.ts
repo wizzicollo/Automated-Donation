@@ -23,6 +23,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { CharityComponent } from './charity/charity.component';
+import { AddDemoComponent } from './components/add-demo/add-demo.component';
+import { DemoDetailsComponent } from './components/demo-details/demo-details.component';
+import { DemoListComponent } from './components/demo-list/demo-list.component';
+import { DemoComponent } from './demo/demo.component';
 
 
  
@@ -36,6 +40,10 @@ import { CharityComponent } from './charity/charity.component';
     HomeComponent,
     TestimonialsComponent,
     CharityComponent,
+    AddDemoComponent,
+    DemoDetailsComponent,
+    DemoListComponent,
+    DemoComponent,
     
    
   

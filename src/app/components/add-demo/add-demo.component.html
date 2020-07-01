@@ -1,0 +1,53 @@
+<div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          required
+          [(ngModel)]="demo.location"
+          name="location"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="target_amount">Target Amount</label>
+        <input
+          class="form-control"
+          id="target_amount"
+          required
+          [(ngModel)]="demo.target_amount"
+          name="target_amount"
+        />
+      </div>
+      <div class="form-group">
+        <label for="amount_raised">Amount Raised</label>
+        <input
+          class="form-control"
+          id="amount_raised"
+          required
+          [(ngModel)]="demo.amount_raised"
+          name="target_amount"
+        />
+      </div>
+      <div class="form-group">
+        <label for="user">User</label>
+        <input
+          class="form-control"
+          id="user"
+          required
+          [(ngModel)]="demo.user"
+          name="user"
+        />
+      </div>
+
+      <button (click)="saveDemo()" class="btn btn-success">Submit</button>
+    </div>
+  
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newDemo()">Add</button>
+    </div>
+  </div>

@@ -1,0 +1,36 @@
+<div *ngIf="currentDemo" class="edit-form">
+    <h4>Demo</h4>
+    <form>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" [(ngModel)]="currentDemo.location" name="location" />
+        </div>
+        <div class="form-group">
+            <label for="target_amount">Target Amount</label>
+            <input type="text" class="form-control" id="target_amount" [(ngModel)]="currentDemo.target_amount"
+                name="target_amount" />
+        </div>
+        <div class="form-group">
+            <label><strong>Status:</strong></label>
+            {{ currentDemo.published ? "Published" : "Pending" }}
+        </div>
+    </form>
+    <button class="badge badge-primary mr-2" *ngIf="currentDemo.published" (click)="updatePublished(false)">
+        UnPublish
+    </button>
+    <button *ngIf="!currentDemo.published" class="badge badge-primary mr-2" (click)="updatePublished(true)">
+        Publish
+    </button>
+
+    <button class="badge badge-danger mr-2" (click)="deleteDemo()">
+        Delete
+    </button>
+    <button type="submit" class="badge badge-success" (click)="updateDemo()">
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentDemo">
+        <br />
+        <p>Cannot access this Tutorial...</p>
+      </div>
