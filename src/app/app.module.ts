@@ -1,3 +1,4 @@
+import { ProfilesService } from './services/profiles.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,6 +34,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { CommonModule } from '@angular/common';
 
 import { UsermanagerService } from './services/usermanager.service';
+
 
 
 export function tokenGetter() {
@@ -91,7 +93,7 @@ export function tokenGetter() {
     AuthGuardService,
     AuthService,
     UsermanagerService,
-    // ProfilesService
+    ProfilesService,
   ],
   bootstrap: [AppComponent]
 })
