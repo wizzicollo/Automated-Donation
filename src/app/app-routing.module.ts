@@ -28,11 +28,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'testimonials', component: TestimonialsComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'charities', component: CharitiesComponent },
 
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'home' },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'charities', component: CharitiesComponent },
+
 
 
 

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 // import { error } from '@angular/compiler/src/util';
 import { UsermanagerService } from 'src/app//services/usermanager.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -19,8 +20,17 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private usermanger: UsermanagerService
+    private usermanger: UsermanagerService,
+    private toastr: ToastrService
   ) {}
+
+  showSuccess() {
+    this.toastr.success('Login Successful', 'Login');
+  }
+
+  showError() {
+    this.toastr.error('Invalid Email or Password','Login');
+  }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -51,6 +61,8 @@ export class LoginComponent implements OnInit {
         // Here we are storing the token and refresh token in the localstorage
 
         console.log(result);
+        this.showSuccess();
+
 
         localStorage.setItem('token', result['token']);
         localStorage.setItem('refresh', result['refresh']);
@@ -59,6 +71,7 @@ export class LoginComponent implements OnInit {
 
       (error) => {
         console.log('error');
+        this.showError();
       }
     );
   }

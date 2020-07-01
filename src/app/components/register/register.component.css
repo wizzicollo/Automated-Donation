@@ -12,13 +12,13 @@
 }
 .register-left input{
     border: none;
-    border-radius: 1.5rem;
-    padding: 2%;
+    border-radius: .5rem;
+    padding: 1%;
     width: 60%;
     background: #f8f9fa;
     font-weight: bold;
     color: #383d41;
-    margin-top: 30%;
+    margin-top: 5%;
     margin-bottom: 3%;
     cursor: pointer;
 }

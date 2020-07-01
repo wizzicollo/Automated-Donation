@@ -1,3 +1,4 @@
+import { ToastrModule } from 'ngx-toastr';
 import { ProfilesService } from './services/profiles.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
@@ -64,8 +65,6 @@ export function tokenGetter() {
     CharityComponent,
     AboutusComponent,
     ProfileComponent,
-
-
   ],
   imports: [
     BrowserModule,
@@ -73,6 +72,7 @@ export function tokenGetter() {
     FormsModule,
     MatIconModule,
     BrowserAnimationsModule,
+
     MatButtonModule,
     MatToolbarModule,
     ReactiveFormsModule,
@@ -81,20 +81,25 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:4200'],
-        blacklistedRoutes: ['example.com/examplebadroute/']
-      }
+        blacklistedRoutes: ['example.com/examplebadroute/'],
+      },
     }),
     CommonModule,
-     BrowserAnimationsModule,
-
-
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    }),
   ],
+
   providers: [
     AuthGuardService,
     AuthService,
     UsermanagerService,
     ProfilesService,
+    // Charity
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

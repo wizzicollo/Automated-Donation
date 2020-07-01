@@ -3,13 +3,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { error } from '@angular/compiler/src/util';
 import { UsermanagerService } from 'src/app/services/usermanager.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
-
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;
@@ -20,8 +21,17 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private usermanger: UsermanagerService
-  ) { }
+    private usermanger: UsermanagerService,
+    private toastr: ToastrService
+  ) {}
+
+  showSuccess() {
+    this.toastr.success('Account Creation Successful', 'Register');
+  }
+
+  showError() {
+    this.toastr.error('Invalid Registration Details', 'Register');
+  }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -31,7 +41,7 @@ export class RegisterComponent implements OnInit {
       email: ['', Validators.required],
       is_charity: ['', Validators.required],
       password: ['', Validators.required],
-      password2: ['', Validators.required]
+      password2: ['', Validators.required],
     });
 
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -42,7 +52,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-
     this.submitted = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
@@ -59,21 +68,32 @@ export class RegisterComponent implements OnInit {
     const password = this.registerForm.value.password;
     const password2 = this.registerForm.value.password2;
 
-    this.usermanger.register(first_name, last_name, username, email, password, password2, is_charity).subscribe(
-      result => {
-        // Here we are storing the token and refresh token in the localstorage
+    this.usermanger
+      .register(
+        first_name,
+        last_name,
+        username,
+        email,
+        password,
+        password2,
+        is_charity
+      )
+      .subscribe(
+        (result) => {
+          // Here we are storing the token and refresh token in the localstorage
 
-        console.log(result)
+          console.log(result);
+          this.showSuccess();
 
-        localStorage.setItem('token', result['token']);
-        localStorage.setItem('refresh', result['refresh']);
-        this.router.navigate(['/login']);
-      },
+          localStorage.setItem('token', result['token']);
+          localStorage.setItem('refresh', result['refresh']);
+          this.router.navigate(['/login']);
+        },
 
-      error => {
-        console.log('error');
-      }
-    );
-
+        (error) => {
+          console.log('error');4
+          this.showError();
+        }
+      );
   }
 }
