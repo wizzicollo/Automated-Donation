@@ -1,5 +1,4 @@
 import { ToastrModule } from 'ngx-toastr';
-import { ProfilesService } from './services/profiles.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,13 +24,14 @@ import { LoginComponent } from './components/login/login.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProfilesService } from 'src/app/core/service'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './components/register/register.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContactComponent } from './components/contact/contact.component';
 import { CharitiesComponent } from './components/charities/charities.component';
 import { CharityComponent } from './components/charity/charity.component';
-import { JwtModule } from '@auth0/angular-jwt';
+import { JwtModule, JwtInterceptor  } from '@auth0/angular-jwt';
 import { CommonModule } from '@angular/common';
 
 import { UsermanagerService } from './services/usermanager.service';
@@ -98,7 +98,11 @@ export function tokenGetter() {
     AuthService,
     UsermanagerService,
     ProfilesService,
-    // Charity
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:JwtInterceptor,
+      multi:true
+    }
   ],
   bootstrap: [AppComponent],
 })

@@ -1,77 +1,76 @@
-<!-- <app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
----- Include the above in your HEAD tag --------
+<!------ Include the above in your HEAD tag ---------->
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<!-- <head>
+<head>
   <title>Automated Donation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head> -->
- -->
+</head>
+
 
 <hr>
 <div class="container bootstrap snippet">
     <div class="row">
-  		<div class="col-sm-10"><h1>User Profile</h1></div>
+  		<div class="col-sm-10"><h1>My Profile</h1></div>
     </div>
     <div class="row">
         <div class="col-sm-3"><!--left col-->
             <div class="text-center"></div>
-            <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
-                <h6>Upload a different photo...</h6>
-                    <input type="file" class="text-center center-block file-upload">
+            <img src="https://f1.pngfuel.com/png/386/684/972/face-icon-user-icon-design-user-profile-share-icon-avatar-black-and-white-silhouette-png-clip-art.png" class="avatar img-circle img-thumbnail" alt="avatar"> 
         </div><!--/col-3-->
     	<div class="col-sm-9">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">My Bio</a></li>
-                <li><a data-toggle="tab" href="#messages">Edit Profile</a></li>
+                <li class="active"><a data-toggle="tab" href="/profile#home">My Bio</a></li>
+                <li></li>
             </ul>
 
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
                     <hr>
-                    <form class="form" action="##" method="post" id="registrationForm">
-
-                        <div class="form-group">
-
-                            <div class="col-md-8 col-sm-6 col-xs-12 personal-info" id="details">
-
-                            <!-- <h3>My Bio</h3> -->
-                                <form class="form-horizontal" role="form">
-
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Username:</label>
-                                        <div class="col-md-8">
-                                            <h4>{{ profile.username }}</h4>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label">Email:</label>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <p>{{ profile.bio }}</p>
-                                        </div>
-                                    </div>
-                                </form>
+                    <div class="media" action="##" id="editform">
+                        <div class="col-md-12 mt-5 text-center">
+                            <div class="">
+                                <div class="">
+                                    <h2 >{{profile.user.username}}</h2>
+                                    <p >{{profile.user.email}}</p>
+                                </div>
+                                <p>Charity: {{profile.user.is_charity}}</p>
+                                <p>Bio: {{profile.bio}}</p>
                             </div>
-                        </div>
-              	    </form>
-
-                <hr>
-                </div>
-                <div class="tab-pane" id="messages">
-                    <h2></h2>
+                        </div>    
                     <hr>
-                </div>
+                    </div>
+                    <hr>
+                    <div  id="edit">
+                        <h2 class="text-align: center">Edit your Profile</h2>
+                    
+                        <form [formGroup]="form" (submit)="submitForm()" class="form-horizontal">
+                            <div class="form-group">
+                                <input type="text" formControlName="username" class="form-control" placeholder="username">
+                            </div>
+                            <div class="form-group">
+                                <textarea type="text" formControlName="bio" class="form-control" placeholder="edit your bio"></textarea>
+                            </div>
+                            <div class="form-group" >
+                                <input type="email" formControlName="email" class="form-control" placeholder="edit your email">
+                            </div>
+                            <div class="form-group">
+                                <input type="file" (change)="uploadFile($event)" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-info">Update</button>
+                        </form>
+                    </div>
             </div>
         </div>
     </div>

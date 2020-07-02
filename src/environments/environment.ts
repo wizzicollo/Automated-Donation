@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:8000/api'
+  API_URL: 'http://localhost:8000/api',
+  CLOUDINARY:'https://res.cloudinary.com/dy81pnpbz/'
 };
 
 /*
